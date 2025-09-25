@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chest Home Workout</title>
+  <link rel="stylesheet" href="static/BodyPartWorkout.css" />
+</head>
+<body>
+  <!-- Main Heading -->
+  <header>
+    <a href="/workout">
+      <h1>🏋️ Fitness Tracker</h1>
+    </a>
+    <p>Your personal workout companion</p>
+  </header>
+
+  <!-- Page Subheading -->
+  <section class="page-title">
+    <h2>Chest Workout</h2>
+    <p>Build a stronger chest from home 💪</p>
+  </section>
+
+  <main class="workout-detail">
+    <table class="workout-table">
+      <thead>
+        <tr>
+          <th>Exercise</th>
+          <th>Sets</th>
+          <th>Reps</th>
+          <th>Rest</th>
+          <th>Tips</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Push-Ups (Standard)</td>
+          <td>4</td>
+          <td>15–20</td>
+          <td>60 sec</td>
+          <td>Keep body straight, lower chest to floor</td>
+        </tr>
+        <tr>
+          <td>Incline Push-Ups (Chair or Wall)</td>
+          <td>3</td>
+          <td>12–15</td>
+          <td>60 sec</td>
+          <td>Targets upper chest, keep elbows tucked</td>
+        </tr>
+        <tr>
+          <td>Wide Push-Ups</td>
+          <td>3</td>
+          <td>12</td>
+          <td>60 sec</td>
+          <td>Hands wider than shoulders for outer chest</td>
+        </tr>
+        <tr>
+          <td>Decline Push-Ups (Feet Elevated)</td>
+          <td>3</td>
+          <td>10–12</td>
+          <td>60 sec</td>
+          <td>Targets upper chest and shoulders</td>
+        </tr>
+        <tr>
+          <td>Chest Dips (Chair or Edge)</td>
+          <td>3</td>
+          <td>10–12</td>
+          <td>60 sec</td>
+          <td>Lean forward to engage chest more</td>
+        </tr>
+        <tr>
+          <td>Wall Press</td>
+          <td>3</td>
+          <td>20</td>
+          <td>45 sec</td>
+          <td>Press palms into wall, hold tension</td>
+        </tr>
+        <tr>
+          <td>Slow Negative Push-Ups</td>
+          <td>3</td>
+          <td>10</td>
+          <td>60 sec</td>
+          <td>Lower slowly for max muscle activation</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="complete-btn">
+         <form action="/log-task" method="post">
+             <input type="hidden" name="task" value="✅ Chest Task Completed">
+             <button type="submit" onclick="markCompleted()">✅ Chest Task Completed</button>
+        </form>
+
+    </div>
+  </main>
+
+  <script>
+    function markCompleted() {
+      alert("🎉 Chest  workout marked as completed!");
+      // Later: send POST request to backend to log workout
+    }
+  </script>
+</body>
+</html>

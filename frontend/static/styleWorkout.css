@@ -1,0 +1,122 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: #0f0f0f;
+  color: #fff;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  text-align: center;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #00ff9d, #00d4ff);
+  color: #000;
+  border-bottom-left-radius: 50% 20%;
+  border-bottom-right-radius: 50% 20%;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 1.2rem;
+  opacity: 0.8;
+}
+
+/* Grid Section */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 40px;
+}
+
+/* Cards */
+.card {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  height: 220px;
+  border-radius: 15px;
+  overflow: hidden;
+  text-decoration: none;
+  color: #fff;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #00ff9d;
+}
+
+.card .overlay {
+  position: relative;
+  padding: 20px;
+  text-align: center;
+  z-index: 2;
+}
+
+.card h2 {
+  font-size: 1.5rem;
+  color: #00ff9d;
+}
+
+.card p {
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+/* Specific Background Images (royalty free placeholder links) */
+.arms {
+  background-image: url("https://static.vecteezy.com/system/resources/previews/066/159/567/non_2x/muscular-arm-of-a-bodybuilder-on-a-dark-background-photo.jpeg");
+}
+.chest {
+  background-image: url("https://e0.pxfuel.com/wallpapers/739/817/desktop-wallpaper-jeff-seid-aesthetic-bodybuilding.jpg");
+}
+.sixpack {
+  background-image: url("https://t3.ftcdn.net/jpg/02/70/23/12/360_F_270231245_SXqIm3mwdsWVJKmSLk5HwHAEGvOA3mYM.jpg");
+}
+.shoulders {
+  background-image: url("https://images.unsplash.com/photo-1603287681836-b174ce5074c2?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Ym9keWJ1aWxkaW5nfGVufDB8fDB8fHww");
+}
+.lowerbody {
+  background-image: url("https://www.shutterstock.com/image-photo/closeup-bodybuilders-legs-ready-competitive-260nw-185279804.jpg");
+}
+.fullbody {
+  background-image: url("https://media.gettyimages.com/id/498089299/photo/big-guns.jpg?s=170667a&w=gi&k=20&c=dAr5n_EcWN20u1EzzFbJQVcJhIQa5TXQ5ULly7xgnfY=");
+}
+
+/* Tracker Section */
+.tracker {
+  text-align: center;
+  padding: 40px;
+  margin: 20px;
+  border-radius: 15px;
+  background: rgba(20, 20, 20, 0.9);
+  box-shadow: 0 0 15px rgba(0, 255, 128, 0.3);
+}
+
+.tracker h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #00ff9d;
+}

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Full Body Workout</title>
+  <link rel="stylesheet" href="static/BodyPartWorkout.css" />
+</head>
+<body>
+  <!-- Main Heading -->
+  <header>
+    <a href="/workout">
+      <h1>🏋️ Fitness Tracker</h1>
+    </a>
+    <p>Your personal workout companion</p>
+  </header>
+
+  <!-- Page Subheading -->
+  <section class="page-title">
+    <h2>Full Body Workout (Beginner)</h2>
+    <p>Start your fitness journey with balanced training 🔰</p>
+  </section>
+
+  <main class="workout-detail">
+    <table class="workout-table">
+      <thead>
+        <tr>
+          <th>Exercise</th>
+          <th>Sets</th>
+          <th>Reps</th>
+          <th>Rest</th>
+          <th>Tips</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Bodyweight Squats</td>
+          <td>3</td>
+          <td>15</td>
+          <td>60 sec</td>
+          <td>Keep chest up, knees aligned</td>
+        </tr>
+        <tr>
+          <td>Push-Ups (Knee or Standard)</td>
+          <td>3</td>
+          <td>12</td>
+          <td>60 sec</td>
+          <td>Maintain straight line from head to toe</td>
+        </tr>
+        <tr>
+          <td>Glute Bridges</td>
+          <td>3</td>
+          <td>15</td>
+          <td>45 sec</td>
+          <td>Squeeze glutes at the top</td>
+        </tr>
+        <tr>
+          <td>Plank Hold</td>
+          <td>3</td>
+          <td>30 sec</td>
+          <td>60 sec</td>
+          <td>Engage core, keep hips level</td>
+        </tr>
+        <tr>
+          <td>Jumping Jacks</td>
+          <td>3</td>
+          <td>30 sec</td>
+          <td>45 sec</td>
+          <td>Stay light on feet, keep rhythm</td>
+        </tr>
+        <tr>
+          <td>Wall Sit</td>
+          <td>3</td>
+          <td>45 sec</td>
+          <td>60 sec</td>
+          <td>Thighs parallel, back flat against wall</td>
+        </tr>
+        <tr>
+          <td>Arm Circles</td>
+          <td>3</td>
+          <td>30 sec each direction</td>
+          <td>30 sec</td>
+          <td>Great warm-up and shoulder activation</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="complete-btn">
+        <form action="/log-task" method="post">
+             <input type="hidden" name="task" value="✅ Full Body Task Completed">
+             <button type="submit" onclick="markCompleted()">✅ Full Body Task Completed</button>
+        </form>
+      <button onclick="markCompleted()">✅ Full Body Task Completed</button>
+    </div>
+  </main>
+
+  <script>
+    function markCompleted() {
+      alert("🎉 Full body workout marked as completed!");
+      // Later: send POST request to backend to log workout
+    }
+  </script>
+</body>
+</html>

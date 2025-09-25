@@ -1,0 +1,156 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Page Background */
+body {
+  background: linear-gradient(135deg, #0f172a, #1e293b, #111827);
+  color: #f8fafc;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+}
+
+/* Main Heading */
+header h1 {
+  font-size: 3rem;
+  text-align: center;
+  margin: 20px 0 15px 0;
+  background: linear-gradient(90deg, #38bdf8, #06b6d4, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+  animation: glowPulse 3s infinite alternate;
+}
+
+header h1:hover {
+  transform: scale(1.08);
+  text-shadow: 0 0 20px rgba(56, 189, 248, 0.9),
+               0 0 40px rgba(6, 182, 212, 0.6);
+}
+
+@keyframes glowPulse {
+  from {
+    text-shadow: 0 0 8px rgba(56, 189, 248, 0.4);
+  }
+  to {
+    text-shadow: 0 0 20px rgba(56, 189, 248, 0.9),
+                 0 0 40px rgba(6, 182, 212, 0.7);
+  }
+}
+
+/* Subtitle below the heading */
+header p {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #94a3b8;
+  margin-bottom: 25px;
+  font-style: italic;
+}
+
+/* Section Heading (Task Log, Chest Workout, etc.) */
+h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #38bdf8;
+  text-shadow: 0 0 10px rgba(56, 189, 248, 0.6);
+  border-bottom: 2px solid rgba(56, 189, 248, 0.4);
+  padding-bottom: 5px;
+}
+
+/* Table Container */
+table {
+  width: 90%;
+  max-width: 1000px;
+  border-collapse: collapse;
+  background: rgba(17, 24, 39, 0.85); /* Dark glassy background */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(6px);
+  transition: transform 0.3s ease;
+}
+
+table:hover {
+  transform: scale(1.01);
+}
+
+/* Table Headers */
+th {
+  background: linear-gradient(90deg, #38bdf8, #06b6d4);
+  color: #0f172a;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 16px;
+  text-align: left;
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+}
+
+/* Table Cells */
+td {
+  padding: 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  transition: background 0.3s ease;
+}
+
+/* Row Hover Effect */
+tr:hover td {
+  background: rgba(56, 189, 248, 0.08);
+}
+
+/* Alternate Row Colors */
+tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.04);
+}
+tr:nth-child(odd) {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+/* Delete Button */
+button {
+  background: linear-gradient(90deg, #ef4444, #dc2626);
+  border: none;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(239, 68, 68, 0.4);
+}
+
+button:hover {
+  background: linear-gradient(90deg, #f87171, #ef4444);
+  transform: translateY(-2px) scale(1.07);
+  box-shadow: 0 6px 15px rgba(239, 68, 68, 0.6);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  table {
+    font-size: 0.85rem;
+  }
+
+  th, td {
+    padding: 10px;
+  }
+
+  button {
+    padding: 6px 10px;
+    font-size: 0.8rem;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+}

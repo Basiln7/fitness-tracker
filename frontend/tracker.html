@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Task Tracker</title>
+  <link rel="stylesheet" href="static/Tracker.css" />
+</head>
+<body>
+
+  <!-- Main Heading (Clickable to Home) -->
+  <header>
+      <a href="/workout">
+    <h1>🏋️ Fitness Tracker</h1></a>
+    <p>Your workout progress log 📅</p>
+  </header>
+
+  <!-- Task Log Section -->
+  <main>
+    <h2>Your Daily Activities</h2>
+    <table>
+      <tr>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Task Completed</th>
+        <th>Action</th>
+      </tr>
+      {% for log in logs %}
+      <tr>
+        <td>{{ log.date }}</td>
+        <td>{{ log.time }}</td>
+        <td>{{ log.task }}</td>
+        <td>
+          <form action="/delete-task/{{ log.id }}" method="post" style="display:inline;">
+            <button type="submit" onclick="return confirm('Delete this task?')">Delete</button>
+          </form>
+        </td>
+      </tr>
+      {% endfor %}
+    </table>
+  </main>
+
+</body>
+</html>

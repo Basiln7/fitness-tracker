@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Arms Home Workout</title>
+  <link rel="stylesheet" href="static/BodyPartWorkout.css" />
+</head>
+<body>
+  <!-- Main Heading -->
+  <header>
+    <a href="/workout">
+      <h1>🏋️ Fitness Tracker</h1>
+    </a>
+    <p>Your personal workout companion</p>
+  </header>
+
+  <!-- Page Subheading -->
+  <section class="page-title">
+    <h2>Arms Home Workout</h2>
+    <p>Build stronger biceps and triceps from home 💪</p>
+  </section>
+
+  <main class="workout-detail">
+    <table class="workout-table">
+      <thead>
+        <tr>
+          <th>Exercise</th>
+          <th>Sets</th>
+          <th>Reps</th>
+          <th>Rest</th>
+          <th>Tips</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Push-Ups (Triceps Focus)</td>
+          <td>4</td>
+          <td>12–15</td>
+          <td>60 sec</td>
+          <td>Keep elbows close to body</td>
+        </tr>
+        <tr>
+          <td>Chair Dips</td>
+          <td>3</td>
+          <td>12</td>
+          <td>60 sec</td>
+          <td>Lower slowly, squeeze triceps at top</td>
+        </tr>
+        <tr>
+          <td>Wall Bicep Curls (Isometric)</td>
+          <td>3</td>
+          <td>15</td>
+          <td>45 sec</td>
+          <td>Press fists into wall, hold tension</td>
+        </tr>
+        <tr>
+          <td>Arm Circles (Forward & Backward)</td>
+          <td>3</td>
+          <td>30 sec each</td>
+          <td>30 sec</td>
+          <td>Great warm-up and shoulder activation</td>
+        </tr>
+        <tr>
+          <td>Isometric Bicep Hold (Towel or Band)</td>
+          <td>3</td>
+          <td>20 sec hold</td>
+          <td>45 sec</td>
+          <td>Pull against resistance, keep elbows bent</td>
+        </tr>
+        <tr>
+          <td>Diamond Push-Ups</td>
+          <td>3</td>
+          <td>10–12</td>
+          <td>60 sec</td>
+          <td>Hands close together under chest</td>
+        </tr>
+        <tr>
+          <td>Shadow Boxing (Fast Punches)</td>
+          <td>3</td>
+          <td>30 sec</td>
+          <td>30 sec</td>
+          <td>Keep arms tight, punch with control</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="complete-btn">
+        <form action="/log-task" method="post">
+             <input type="hidden" name="task" value="✅ Arms workout completed">
+             <button type="submit" onclick="markCompleted()">✅ Arms Home Task Completed</button>
+        </form>
+    </div>
+  </main>
+
+  <script>
+    function markCompleted() {
+      alert("🎉 Arms home workout marked as completed!");
+      // Later: send POST request to backend to log workout
+    }
+  </script>
+</body>
+</html>

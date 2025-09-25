@@ -1,0 +1,353 @@
+/* ================================
+   Root Variables
+================================== */
+:root {
+  --primary-color: #e60023;
+  --secondary-color: #ff6f3c;
+  --dark-bg: #0b0c10;
+  --dark-bg-gradient: linear-gradient(135deg, #0b0c10, #1f2833, #0b0c10);
+  --accent-color: #00ff88;
+  --text-light: #f4f4f4;
+  --text-muted: #aaaaaa;
+  --card-bg: rgba(0, 0, 0, 0.4);
+
+  --font-family-body: "Roboto", sans-serif;
+  --font-family-heading: "Oswald", sans-serif;
+  --font-size-base: 1rem;
+}
+
+/* ================================
+   Base / Reset
+================================== */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family-body);
+  color: var(--text-light);
+  background: var(--dark-bg-gradient);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ================================
+   Header / Navbar
+================================== */
+header {
+  background: rgba(0, 0, 0, 0.75);
+  padding: 1.5rem 2rem;
+  text-align: center;
+  border-bottom: 3px solid var(--primary-color);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header h1 {
+  font-family: var(--font-family-heading);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+header h1:hover {
+  color: var(--secondary-color);
+  text-shadow: 0 0 10px var(--primary-color);
+}
+
+header p {
+  margin-top: 0.5rem;
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  color: var(--text-muted);
+}
+
+/* ================================
+   Home Grid (Workout Cards)
+================================== */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  text-decoration: none;
+  color: var(--text-light);
+  min-height: 250px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  transition: background 0.4s ease;
+}
+
+.card:hover {
+  transform: translateY(-15px) scale(1.02);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.7);
+}
+
+.card:hover::before {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.overlay {
+  position: relative;
+  z-index: 1;
+  padding: 1.5rem;
+  width: 100%;
+  text-align: center;
+  backdrop-filter: blur(5px);
+}
+
+.overlay h2 {
+  font-family: var(--font-family-heading);
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--accent-color);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ================================
+   Card Backgrounds (New URLs)
+================================== */
+.card {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  color: var(--text-light);
+  min-height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1f1c2c, #928dab);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+/* Optional animated gradient (optional: can slow down rendering on weak devices) */
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(45deg, #ff416c, #ff4b2b, #1f4037, #99f2c8);
+  background-size: 400% 400%;
+  animation: gradientShift 8s ease infinite;
+  opacity: 0.15;
+  z-index: 0;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.overlay {
+  position: relative;
+  z-index: 1;
+  padding: 1.5rem;
+}
+
+.overlay h2 {
+  font-family: var(--font-family-heading);
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--accent-color);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Optional icons for each card */
+.card.arms      .overlay::before { content: "💪"; font-size: 2rem; display: block; margin-bottom: 0.5rem; }
+.card.chest     .overlay::before { content: "🏋️‍♂️"; font-size: 2rem; display: block; margin-bottom: 0.5rem; }
+.card.sixpack   .overlay::before { content: "🔥"; font-size: 2rem; display: block; margin-bottom: 0.5rem; }
+.card.shoulders .overlay::before { content: "🤸‍♂️"; font-size: 2rem; display: block; margin-bottom: 0.5rem; }
+.card.lowerbody .overlay::before { content: "🦵"; font-size: 2rem; display: block; margin-bottom: 0.5rem; }
+.card.fullbody  .overlay::before { content: "🏃‍♂️"; font-size: 2rem; display: block; margin-bottom: 0.5rem; }
+
+
+/* ================================
+   Tracker Section
+================================== */
+.tracker {
+  padding: 3rem 2rem;
+  text-align: center;
+  background: var(--card-bg);
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.3);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tracker h2 {
+  font-family: var(--font-family-heading);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+  text-transform: uppercase;
+}
+
+/* ================================
+   Workout Detail Page
+================================== */
+.workout-detail {
+  padding: 3rem 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.workout-detail h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-family: var(--font-family-heading);
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  color: var(--secondary-color);
+  text-shadow: 0 0 8px rgba(255, 111, 60, 0.8);
+}
+
+/* ================================
+   Workout Table
+================================== */
+.workout-table-wrapper {
+  overflow-x: auto;
+  margin-top: 2rem;
+}
+
+.workout-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 1.5rem 0;
+  background: var(--card-bg);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.workout-table th,
+.workout-table td {
+  padding: 15px;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.workout-table th {
+  background: var(--primary-color);
+  color: #fff;
+  text-transform: uppercase;
+  font-family: var(--font-family-heading);
+  font-weight: 700;
+  position: sticky;
+  top: 0;
+}
+
+.workout-table tr {
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.workout-table tr:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: scale(1.005);
+}
+
+.workout-table tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+/* ================================
+   Buttons
+================================== */
+.complete-btn,
+.delete-btn-wrapper {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.complete-btn button,
+.delete-btn {
+  background: var(--primary-color);
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.complete-btn button:hover,
+.delete-btn:hover {
+  background: var(--secondary-color);
+  color: var(--dark-bg);
+  box-shadow: 0 6px 20px rgba(255, 111, 60, 0.6);
+  transform: translateY(-5px);
+  animation: pulse 0.8s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* ================================
+   Page Title / Subheading
+================================== */
+.page-title {
+  text-align: center;
+  margin: 3rem 0 2rem;
+}
+
+.page-title h2 {
+  font-family: var(--font-family-heading);
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  color: var(--secondary-color);
+  text-shadow: 0 0 8px rgba(255, 111, 60, 0.8);
+  text-transform: uppercase;
+}
+
+.page-title p {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: var(--text-muted);
+  margin-top: 0.5rem;
+}

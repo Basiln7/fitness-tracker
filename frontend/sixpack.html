@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sixpack Workout</title>
+  <link rel="stylesheet" href="static/BodyPartWorkout.css" />
+</head>
+<body>
+  <!-- Main Heading -->
+  <header>
+    <h1 onclick="window.location.href='index.html'">🏋️ Fitness Tracker</h1>
+    <p>Your personal workout companion</p>
+  </header>
+
+  <!-- Page Subheading -->
+  <section class="page-title">
+    <h2>Sixpack Workout</h2>
+    <p>Strengthen and define your core 🔥</p>
+  </section>
+
+  <!-- Workout Details -->
+  <main class="workout-detail">
+    <table class="workout-table">
+      <thead>
+        <tr>
+          <th>Exercise</th>
+          <th>Sets</th>
+          <th>Reps / Duration</th>
+          <th>Rest</th>
+          <th>Tips</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Crunches</td>
+          <td>3</td>
+          <td>20</td>
+          <td>30 sec</td>
+          <td>Lift shoulder blades, not neck; exhale on the crunch</td>
+        </tr>
+        <tr>
+          <td>Leg Raises</td>
+          <td>3</td>
+          <td>15</td>
+          <td>45 sec</td>
+          <td>Keep legs straight, lower slowly</td>
+        </tr>
+        <tr>
+          <td>Plank (Hold)</td>
+          <td>3</td>
+          <td>45 sec</td>
+          <td>60 sec</td>
+          <td>Keep hips level, engage glutes and abs</td>
+        </tr>
+        <tr>
+          <td>Bicycle Crunches</td>
+          <td>3</td>
+          <td>20 (10 each side)</td>
+          <td>45 sec</td>
+          <td>Twist fully, elbow to opposite knee</td>
+        </tr>
+        <tr>
+          <td>Flutter Kicks</td>
+          <td>3</td>
+          <td>30 sec</td>
+          <td>30 sec</td>
+          <td>Keep core tight, legs low and fast</td>
+        </tr>
+        <tr>
+          <td>Russian Twists</td>
+          <td>3</td>
+          <td>20 (10 each side)</td>
+          <td>45 sec</td>
+          <td>Use a water bottle or weight for resistance</td>
+        </tr>
+        <tr>
+          <td>Reverse Crunches</td>
+          <td>3</td>
+          <td>15</td>
+          <td>30 sec</td>
+          <td>Lift hips off the floor, control the descent</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="complete-btn">
+         <form action="/log-task" method="post">
+             <input type="hidden" name="task" value="✅ Sixpack Task Completed">
+             <button type="submit" onclick="markCompleted()">✅ Sixpack Task Completed</button>
+        </form>
+    </div>
+  </main>
+
+  <script>
+    function markCompleted() {
+      alert("🎉 Sixpack workout marked as completed!");
+      // Later: send POST request to backend to log workout
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shoulders Workout</title>
+  <link rel="stylesheet" href="static/BodyPartWorkout.css" />
+</head>
+<body>
+  <!-- Main Heading -->
+  <header>
+    <a href="/workout">
+      <h1>🏋️ Fitness Tracker</h1>
+    </a>
+    <p>Your personal workout companion</p>
+  </header>
+
+  <!-- Page Subheading -->
+  <section class="page-title">
+    <h2>Shoulders Workout</h2>
+    <p>Build strong, defined shoulders 🛡️</p>
+  </section>
+
+  <main class="workout-detail">
+    <table class="workout-table">
+      <thead>
+        <tr>
+          <th>Exercise</th>
+          <th>Sets</th>
+          <th>Reps</th>
+          <th>Rest</th>
+          <th>Tips</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Overhead Shoulder Press (Dumbbell/Barbell)</td>
+          <td>4</td>
+          <td>8</td>
+          <td>90 sec</td>
+          <td>Keep core tight, press straight overhead</td>
+        </tr>
+        <tr>
+          <td>Lateral Raises</td>
+          <td>3</td>
+          <td>12</td>
+          <td>60 sec</td>
+          <td>Lift to shoulder height, control the descent</td>
+        </tr>
+        <tr>
+          <td>Front Raises</td>
+          <td>3</td>
+          <td>12</td>
+          <td>60 sec</td>
+          <td>Use light weight, isolate front delts</td>
+        </tr>
+        <tr>
+          <td>Arnold Press</td>
+          <td>3</td>
+          <td>10</td>
+          <td>90 sec</td>
+          <td>Rotate wrists during press for full range</td>
+        </tr>
+        <tr>
+          <td>Face Pulls (Resistance Band/Cable)</td>
+          <td>3</td>
+          <td>15</td>
+          <td>60 sec</td>
+          <td>Pull toward forehead, squeeze rear delts</td>
+        </tr>
+        <tr>
+          <td>Upright Rows</td>
+          <td>3</td>
+          <td>12</td>
+          <td>60 sec</td>
+          <td>Lift elbows high, avoid shoulder impingement</td>
+        </tr>
+        <tr>
+          <td>Plank to Pike</td>
+          <td>3</td>
+          <td>15</td>
+          <td>45 sec</td>
+          <td>Bodyweight finisher for shoulder stability</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="complete-btn">
+         <form action="/log-task" method="post">
+             <input type="hidden" name="task" value="✅ Shoulders Task Completed">
+             <button type="submit" onclick="markCompleted()">✅ Shoulders Task Completed</button>
+        </form>
+    </div>
+  </main>
+
+  <script>
+    function markCompleted() {
+      alert("🎉 Shoulders workout marked as completed!");
+      // Later: send POST request to backend to log workout
+    }
+  </script>
+</body>
+</html>
